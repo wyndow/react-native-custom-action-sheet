@@ -6,24 +6,14 @@ var FadeInView = require('./fade_in_view');
 var { Modal, StyleSheet, TouchableOpacity, View} = React;
 
 var ActionModal = React.createClass({
-  getInitialState: function() {
-    return {
-      modalVisible: this.props.modalVisible
-    };
-  },
-
-  _setModalVisible: function(visible) {
-    this.setState({modalVisible: visible});
-  },
-
   render: function() {
     return (
-      <FadeInView visible={this.state.modalVisible} backgroundColor={this.props.backgroundColor}>
+      <FadeInView visible={this.props.modalVisible} backgroundColor={this.props.backgroundColor}>
         <Modal
           animated={true}
           transparent={true}
-          visible={this.state.modalVisible}
-          onRequestClose={function() {this._setModalVisible(false);}}>
+          visible={this.props.modalVisible}
+          onRequestClose={this.props.onCancel}>
           <View style={styles.modalContainer}>
             <TouchableOpacity style={styles.container} onPress={this.props.onCancel}></TouchableOpacity>
             {this.props.children}
