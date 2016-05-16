@@ -2,8 +2,8 @@
 
 var React = require('react');
 var ReactNative = require('react-native');
-var window = React.Dimensions.get('window');
-var { Animated, StyleSheet, View} = ReactNative;
+var { Animated, Dimensions, StyleSheet, View} = ReactNative;
+var window = Dimensions.get('window');
 
 var FadeInView = React.createClass({
   getInitialState: function() {
