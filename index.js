@@ -1,9 +1,10 @@
 'use strict';
 
-var React = require('react-native');
+var React = require('react');
+var ReactNative = require('react-native');
 var Button = require('./button');
 var FadeInView = require('./fade_in_view');
-var { Modal, StyleSheet, TouchableOpacity, View} = React;
+var { Modal, StyleSheet, TouchableOpacity, View} = ReactNative;
 
 var ActionModal = React.createClass({
   render: function() {
